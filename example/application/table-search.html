@@ -1,0 +1,68 @@
+<div class="easyui-layout" id="XXAction" fit="true">
+	<table id="Table" class="easyui-datagrid" style="width:95%;height:95%" data-options="rownumbers:true,singleSelect:true,url:'example/datagrid/datagrid_data1.json',method:'get',toolbar:'#tb5',pagination:true,
+				pageSize:10">
+		<thead>
+			<tr>
+				<th data-options="field:'itemid',width:80">Item ID</th>
+				<th data-options="field:'productid',width:100">Product</th>
+				<th data-options="field:'listprice',width:80,align:'right'">List Price</th>
+				<th data-options="field:'unitcost',width:80,align:'right'">Unit Cost</th>
+				<th data-options="field:'attr1',width:240">Attribute</th>
+				<th data-options="field:'status',width:60,align:'center'">Status</th>
+			</tr>
+		</thead>
+	</table>
+	<div id="tb5">
+		Date From: <input class="easyui-datebox" style="width:110px"> To: <input class="easyui-datebox" style="width:110px"> Language:
+		<select class="easyui-combobox" panelHeight="auto" style="width:100px">
+			<option value="java">Java</option>
+			<option value="c">C</option>
+			<option value="basic">Basic</option>
+			<option value="perl">Perl</option>
+			<option value="python">Python</option>
+		</select>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-search">Search</a>
+		<div id="ft5" style="margin-top: 10px;">
+			<a href="#" onclick="XXAction.add()" class="easyui-linkbutton" iconCls="icon-add" plain="true">添加</a>
+			<a href="#" onclick="XXAction.edit()" class="easyui-linkbutton" iconCls="icon-edit" plain="true">编辑</a>
+			<a href="#" class="easyui-linkbutton" iconCls="icon-save" plain="true">保存</a>
+			<a href="#" class="easyui-linkbutton" iconCls="icon-cut" plain="true">剪切</a>
+			<a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true">删除</a>
+		</div>
+	</div>
+	<div class="easyui-panel" href="example\dialog\dialog-toolbar.html?id=1"></div>
+	<!--<div id="dlg" style="width: 600px;height:400px;" class="easyui-dialog"   href="example/form/form-validate-submit.html" data-options="modal:true,closed:true,cache:false,cls:'dialog',buttons:'#dlg-buttons'"></div>
+	 <div id="dlg-buttons">
+        <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:alert('save')">Save</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#dlg').dialog('close')">Close</a>
+    </div>-->
+	<br>
+</div>
+<script type="text/javascript">
+	var XXAction = {};
+
+	$(function() {
+//		$('#dlg', $("#XXAction")).dialog({
+//			title: 'My Dialog',
+//			width: 600,
+//			height: 400,
+//			closed: true,
+//			cache: false,
+//			href: 'example/form/form-validate-submit.html',
+//			modal: true
+//		});
+	})
+
+	XXAction.add = function() {
+		$.messager.alert('提示', '新增操作!', 'info');
+	}
+
+	XXAction.edit = function() {
+		var row = $("#Table", $("#XXAction")).datagrid("getSelected");
+		if(row) {
+			$('#dlg').dialog('open')
+		} else {
+			$.messager.alert('提示', '请选择一行!', 'error');
+		}
+	}
+</script>

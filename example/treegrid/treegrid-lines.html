@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="edge" />
+<link rel="shortcut icon" href="favicon.ico" />
+<title>jQuery EasyUI 1.4.5 - Insdep of theme</title>
+<!--
+	注意样式表优先级
+    主题样式必须在easyui组件样式后。
+-->
+<script type="text/javascript" src="../jquery.min.js"></script>
+<script type="text/javascript" src="../jquery.easyui.min.js"></script>
+<link href="../themes/insdep/easyui.css" rel="stylesheet" type="text/css">
+<link href="../themes/insdep/master.css" rel="stylesheet" type="text/css">
+<link href="../themes/icon.css" rel="stylesheet" type="text/css">
+</head>
+
+<body style=" padding:20px;">
+    <h2>TreeGrid Lines</h2>
+    <p>This example shows how to show treegrid lines.</p>
+    <div style="margin:20px 0;"></div>
+    <table title="TreeGrid Lines" class="easyui-treegrid" style="width:700px;height:250px"
+            data-options="
+            	cls:'treegrid',
+                url: 'treegrid_data1.json',
+                method: 'get',
+                lines: true,
+                rownumbers: true,
+                idField: 'id',
+                treeField: 'name'
+            ">
+        <thead>
+            <tr>
+                <th data-options="field:'name'" width="220">Name</th>
+                <th data-options="field:'size'" width="100" align="right">Size</th>
+                <th data-options="field:'date'" width="150">Modified Date</th>
+            </tr>
+        </thead>
+    </table>
+</body>
+</html>

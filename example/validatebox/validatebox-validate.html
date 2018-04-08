@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="edge" />
+<link rel="shortcut icon" href="favicon.ico" />
+<title>jQuery EasyUI 1.4.5 - Insdep of theme</title>
+<!--
+	注意样式表优先级
+    主题样式必须在easyui组件样式后。
+-->
+<script type="text/javascript" src="../jquery.min.js"></script>
+<script type="text/javascript" src="../jquery.easyui.min.js"></script>
+<link href="../themes/insdep/easyui.css" rel="stylesheet" type="text/css">
+<link href="../themes/insdep/master.css" rel="stylesheet" type="text/css">
+<link href="../themes/icon.css" rel="stylesheet" type="text/css">
+</head>
+
+<body style=" padding:20px;">
+   <h2>Validate On Blur</h2>
+    <p>Active validation on first blur event.</p>
+    <div style="margin:20px 0;"></div>
+    <div class="easyui-panel" title="Register" style="width:100%;max-width:400px;padding:30px 60px;">
+        <div style="margin-bottom:20px">
+            <label class="label-top">User Name:</label>
+            <input class="easyui-validatebox tb" data-options="required:true,validType:'length[3,10]',validateOnCreate:false,validateOnBlur:true">
+        </div>
+        <div style="margin-bottom:20px">
+            <label class="label-top">Email:</label>
+            <input class="easyui-validatebox tb" data-options="required:true,validType:'email',validateOnCreate:false,validateOnBlur:true">
+        </div>
+        <div style="margin-bottom:20px">
+            <label class="label-top">Url:</label>
+            <input class="easyui-validatebox tb" data-options="required:true,validType:'url',validateOnCreate:false,validateOnBlur:true">
+        </div>
+        <div style="margin-bottom:20px">
+            <label class="label-top">Phone:</label>
+            <input class="easyui-validatebox tb" data-options="required:true,validateOnCreate:false,validateOnBlur:true">
+        </div>
+    </div>
+    <style scoped="scoped">
+        .tb{
+            width:100%;
+            margin:0;
+            padding:5px 4px;
+            border:1px solid #ccc;
+            box-sizing:border-box;
+        }
+    </style>
+ 
+</body>
+</html>

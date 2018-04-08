@@ -1,0 +1,45 @@
+    <div id="yyjlEdit">
+    <div id="dlg" class="easyui-dialog" title="Toolbar and Buttons" style="width:400px;height:200px;padding:10px"
+            data-options="
+                iconCls: 'icon-save',
+                cls:'dialog',
+                closed:true,
+                modal:true,
+                toolbar: [{
+                    text:'Add',
+                    iconCls:'icon-add',
+                    handler:function(){
+                        alert('add')
+                    }
+                },'-',{
+                    text:'Save',
+                    iconCls:'icon-save',
+                    handler:function(){
+                        alert('save')
+                    }
+                }],
+                buttons: [{
+                    text:'Ok',
+                    iconCls:'icon-ok',
+                    handler:function(){
+                        alert('ok');
+                    }
+                },{
+                    text:'Cancel',
+                    handler:function(){
+                        $('.easyui-dialog').dialog('close').dialog('destroy');
+                    }
+                }]
+            ">
+        The dialog content.
+    </div>
+    </div>
+   <script type="text/javascript">
+   	$(function(){
+   		$("#dlg",$("#yyjlEdit")).dialog({
+   			onClose:function(){
+   				alert(1);
+   			}
+   		});
+   	})
+   </script>

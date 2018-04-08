@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="edge" />
+<link rel="shortcut icon" href="favicon.ico" />
+<title>jQuery EasyUI 1.4.5 - Insdep of theme</title>
+<!--
+	注意样式表优先级
+    主题样式必须在easyui组件样式后。
+-->
+<script type="text/javascript" src="../jquery.min.js"></script>
+<script type="text/javascript" src="../jquery.easyui.min.js"></script>
+<link href="../themes/insdep/easyui.css" rel="stylesheet" type="text/css">
+<link href="../themes/insdep/master.css" rel="stylesheet" type="text/css">
+<link href="../themes/icon.css" rel="stylesheet" type="text/css">
+</head>
+
+<body style=" padding:20px;">
+    <h2>Customize Columns of PropertyGrid</h2>
+    <p>The columns of PropertyGrid can be changed.</p>
+    <div style="margin:20px 0;"></div>
+    <table class="easyui-propertygrid" style="width:300px" data-options="
+                url: 'propertygrid_data1.json',
+                method: 'get',
+                showGroup: true,
+                scrollbarSize: 0,
+                columns: mycolumns
+            ">
+    </table>
+    <script>
+        var mycolumns = [[
+            {field:'name',title:'MyName',width:100,sortable:true},
+               {field:'value',title:'MyValue',width:100,resizable:false}
+        ]];
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<ul class="nav nav-list">
+	<li>
+		<a href="example/application/table-search.html">
+			<i class="fa fa-align-left"></i>
+			<span class="nav-menu-text"> 预约记录 </span>
+		</a>
+	</li>
+	<li>
+		<a href="example/dialog/dialog.html">
+			<i class="fa fa-align-left"></i>
+			<span class="nav-menu-text"> dialog </span>
+		</a>
+	</li>
+	
+</ul>
+<script type="text/javascript">
+	$(function(a) {
+		a(".nav-list").on("click", function(h) {
+			var g = a(h.target).closest("a");
+			if(!g || g.length == 0) {
+				return
+			}
+			if(!g.hasClass("dropdown-toggle")) {
+				$(".active").removeClass("active");
+				g.parent().addClass("active");
+				if($("#tt").tabs("getTab", g.text())) {
+					$("#tt").tabs("select", g.text());
+					return false;
+				}
+				$('#tt').tabs('add', {
+					style: {
+						"padding": "10px 0 10px 10px"
+					},
+					title: g.text(),
+					href: g.attr("href"),
+					closable: true
+				});
+				return false
+			}
+			var f = g.next().get(0);
+			if(!a(f).is(":visible")) {
+				var d = a(f.parentNode).closest("ul");
+				d.find("> .open > .submenu").each(function() {
+					if(this != f && !a(this.parentNode).hasClass("active")) {
+						a(this).slideUp(200).parent().removeClass("open")
+					}
+				})
+			} else {}
+			a(f).slideToggle(200).parent().toggleClass("open");
+			return false;
+		});
+	})
+</script>

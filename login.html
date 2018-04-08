@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+		<title>龙潭车检管理系统</title>
+		<link href="css/login.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+		<div class="login_box">
+			<div class="login_l_img"><img src="img/login-img.png"></div>
+			<div class="login">
+				<div class="login_name">
+					<p>龙潭车检后台管理系统</p>
+				</div>
+				<input name="username" type="text" value="用户名" onfocus="this.value=&#39;&#39;" onblur="if(this.value==&#39;&#39;){this.value=&#39;用户名&#39;}">
+				<span id="password_text" onclick="this.style.display=&#39;none&#39;;document.getElementById(&#39;password&#39;).style.display=&#39;block&#39;;document.getElementById(&#39;password&#39;).focus().select();" style="display: block;">密码</span>
+				<input name="password" type="password" id="password" style="display: none;" onblur="if(this.value==&#39;&#39;){document.getElementById(&#39;password_text&#39;).style.display=&#39;block&#39;;this.style.display=&#39;none&#39;};">
+				<input id="subBtn" value="登录" style="width:100%;" type="button">
+			</div>
+		</div>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#subBtn",$(".login_box")).on("click",function(){
+					localStorage.setItem("_loginId","111");
+					window.location.href="index.html";
+				})
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,63 @@
+<div >
+	<div class="left">
+		<img src="themes/insdep/images/portrait86x86.png" width="86" height="86">
+	</div>
+	<div class="right">
+
+		<style>
+			.gauge {
+				width: 130px;
+				height: 130px;
+			}
+		</style>
+
+		<ul>
+			<li>
+				<div id="gg01" class="gauge" data-value="250"></div><span>我的数据</span></li>
+			<li>
+				<div id="gg02" class="gauge" data-value="2025"></div><span>我的数据</span></li>
+			<li>
+				<div id="gg03" class="gauge" data-value="115"></div><span>我的数据</span></li>
+			<li>
+				<div id="gg04" class="gauge" data-value="687"></div><span>我的数据</span></li>
+		</ul>
+		<script>
+			$(function() {
+				var dflt = {
+					min: 0,
+					max: 2800,
+					donut: true,
+					gaugeWidthScale: 0.6,
+					counter: true,
+					hideInnerShadow: true
+				}
+				var gg01 = new JustGage({
+					id: 'gg01',
+					value: 125,
+					defaults: dflt
+				});
+
+				var gg02 = new JustGage({
+					id: 'gg02',
+					defaults: dflt
+				});
+				var gg03 = new JustGage({
+					id: 'gg03',
+					defaults: dflt
+				});
+				var gg04 = new JustGage({
+					id: 'gg04',
+					defaults: dflt
+				});
+			});
+		</script>
+	</div>
+	<div class="center">
+		<h1>张莉莉<span class="badge color-warning">未认证</span></h1>
+		<h2>管理员</h2>
+		<dl>
+			<dt>examples@insdep.com</dt>
+			<dd>13000000000</dd>
+		</dl>
+	</div>
+</div>
